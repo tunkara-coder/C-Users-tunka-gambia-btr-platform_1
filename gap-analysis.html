@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ETF Gap Analysis - The Gambia BTR Platform</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/gap-analysis.css">
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <div class="logo-container">
+                <div class="logo-placeholder">GM</div>
+                <div class="logo-text">
+                    <h1>ETF Gap Analysis</h1>
+                    <p>Ministry of Environment, Climate Change and Natural Resources</p>
+                </div>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html" class="nav-link">← Back to Platform</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="section-header">
+            <h2>Enhanced Transparency Framework Gap Analysis</h2>
+            <p>Assess existing structures, capacities, and information against ETF requirements</p>
+        </div>
+        
+        <div class="analysis-container">
+            <div class="analysis-nav">
+                <button type="button" class="analysis-nav-btn active" onclick="showAnalysisTab('institutional')">Institutional Structures</button>
+                <button type="button" class="analysis-nav-btn" onclick="showAnalysisTab('technical')">Technical Capacities</button>
+                <button type="button" class="analysis-nav-btn" onclick="showAnalysisTab('data-systems')">Data & Information</button>
+                <button type="button" class="analysis-nav-btn" onclick="showAnalysisTab('financial')">Financial Resources</button>
+                <button type="button" class="analysis-nav-btn" onclick="showAnalysisTab('summary')">Analysis Summary</button>
+            </div>
+            
+            <div class="analysis-content">
+                <!-- Institutional Structures Tab -->
+                <div class="analysis-tab active" id="institutional-tab">
+                    <h3>Institutional Structures, Coordination, and Governance</h3>
+                    <form class="analysis-form">
+                        <div class="assessment-group">
+                            <h4>Lead Agency Mandate</h4>
+                            <div class="form-group">
+                                <label for="mandate-clarity">Clarity of MECCNAR's mandate to coordinate BTR</label>
+                                <select id="mandate-clarity" class="assessment-select">
+                                    <option value="">Select assessment</option>
+                                    <option value="not-established">Not Established</option>
+                                    <option value="partial">Partially Established</option>
+                                    <option value="established">Established but Not Effective</option>
+                                    <option value="effective">Established and Effective</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="coordination-mechanism">Inter-Institutional Coordination Mechanism</label>
+                                <select id="coordination-mechanism" class="assessment-select">
+                                    <option value="">Select assessment</option>
+                                    <option value="none">No formal mechanism</option>
+                                    <option value="informal">Informal coordination only</option>
+                                    <option value="formal">Formal mechanism exists</option>
+                                    <option value="effective">Formal and effective mechanism</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <div class="form-actions">
+                            <button type="button" class="btn-secondary" onclick="saveGapAnalysis('institutional')">Save Assessment</button>
+                            <button type="button" class="btn-primary" onclick="showAnalysisTab('technical')">Next: Technical Capacities →</button>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Technical Capacities Tab -->
+                <div class="analysis-tab" id="technical-tab">
+                    <h3>Technical Capacities and Human Resources</h3>
+                    <form class="analysis-form">
+                        <div class="assessment-group">
+                            <h4>GHG Inventory Development</h4>
+                            <div class="form-group">
+                                <label for="ghg-inventory-experience">GHG Inventory Development Experience</label>
+                                <select id="ghg-inventory-experience" class="assessment-select">
+                                    <option value="">Select assessment</option>
+                                    <option value="none">No previous experience</option>
+                                    <option value="basic">Basic experience (1-2 inventories)</option>
+                                    <option value="moderate">Moderate experience (3+ inventories)</option>
+                                    <option value="extensive">Extensive experience</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="sector-expertise">Sector-Specific Expertise Availability</label>
+                                <select id="sector-expertise" class="assessment-select">
+                                    <option value="">Select assessment</option>
+                                    <option value="none">No sector experts available</option>
+                                    <option value="limited">Limited expertise in key sectors</option>
+                                    <option value="adequate">Adequate expertise in most sectors</option>
+                                    <option value="comprehensive">Comprehensive expertise across all sectors</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <div class="form-actions">
+                            <button type="button" class="btn-secondary" onclick="showAnalysisTab('institutional')">← Previous</button>
+                            <button type="button" class="btn-secondary" onclick="saveGapAnalysis('technical')">Save Assessment</button>
+                            <button type="button" class="btn-primary" onclick="showAnalysisTab('data-systems')">Next: Data Systems →</button>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Data & Information Systems Tab -->
+                <div class="analysis-tab" id="data-systems-tab">
+                    <h3>Data and Information Systems</h3>
+                    <form class="analysis-form">
+                        <div class="assessment-group">
+                            <h4>GHG Inventory Data</h4>
+                            <div class="form-group">
+                                <label for="activity-data-availability">Activity Data Availability and Quality</label>
+                                <select id="activity-data-availability" class="assessment-select">
+                                    <option value="">Select assessment</option>
+                                    <option value="poor">Poor (0-33% available)</option>
+                                    <option value="partial">Partial (34-66% available)</option>
+                                    <option value="good">Good (67-100% available)</option>
+                                    <option value="excellent">Excellent (90-100% available, high quality)</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="emission-factors">Emission Factors (Tier Level)</label>
+                                <select id="emission-factors" class="assessment-select">
+                                    <option value="">Select assessment</option>
+                                    <option value="tier1-default">Tier 1 (IPCC defaults only)</option>
+                                    <option value="tier1-some">Tier 1 with some country-specific</option>
+                                    <option value="tier2-mixed">Mixed Tier 1 and Tier 2</option>
+                                    <option value="tier2-3">Primarily Tier 2/3 with country-specific</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <div class="form-actions">
+                            <button type="button" class="btn-secondary" onclick="showAnalysisTab('technical')">← Previous</button>
+                            <button type="button" class="btn-secondary" onclick="saveGapAnalysis('dataSystems')">Save Assessment</button>
+                            <button type="button" class="btn-primary" onclick="showAnalysisTab('financial')">Next: Financial Resources →</button>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Financial Resources Tab -->
+                <div class="analysis-tab" id="financial-tab">
+                    <h3>Financial and Logistical Resources</h3>
+                    <form class="analysis-form">
+                        <div class="assessment-group">
+                            <h4>Financial Sustainability</h4>
+                            <div class="form-group">
+                                <label for="funding-stability">Funding Stability and Predictability</label>
+                                <select id="funding-stability" class="assessment-select">
+                                    <option value="">Select assessment</option>
+                                    <option value="unreliable">Unreliable and ad-hoc</option>
+                                    <option value="partial">Partially reliable</option>
+                                    <option value="stable">Stable but short-term</option>
+                                    <option value="sustainable">Sustainable and predictable</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="budget-adequacy">Budget Adequacy for BTR Activities</label>
+                                <select id="budget-adequacy" class="assessment-select">
+                                    <option value="">Select assessment</option>
+                                    <option value="insufficient">Severely insufficient</option>
+                                    <option value="inadequate">Inadequate for core activities</option>
+                                    <option value="adequate">Adequate for core activities</option>
+                                    <option value="sufficient">Sufficient for all requirements</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <div class="form-actions">
+                            <button type="button" class="btn-secondary" onclick="showAnalysisTab('data-systems')">← Previous</button>
+                            <button type="button" class="btn-secondary" onclick="saveGapAnalysis('financial')">Save Assessment</button>
+                            <button type="button" class="btn-primary" onclick="showAnalysisTab('summary')">View Summary →</button>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Summary Tab -->
+                <div class="analysis-tab" id="summary-tab">
+                    <h3>Gap Analysis Summary</h3>
+                    <div class="summary-container">
+                        <div class="summary-overview">
+                            <h4>Overall ETF Compliance Status</h4>
+                            <div id="compliance-score" class="score-card">
+                                <div class="score-value">0%</div>
+                                <div class="score-label">Overall Compliance</div>
+                            </div>
+                            <div class="priority-actions">
+                                <h4>🚨 Priority Action Areas</h4>
+                                <div id="priority-actions-list"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="detailed-breakdown">
+                            <h4>Detailed Assessment by Area</h4>
+                            <div class="breakdown-grid">
+                                <div class="breakdown-item">
+                                    <h5>Institutional Structures</h5>
+                                    <div class="breakdown-score" id="institutional-score">0%</div>
+                                    <div class="breakdown-details" id="institutional-details"></div>
+                                </div>
+                                <div class="breakdown-item">
+                                    <h5>Technical Capacities</h5>
+                                    <div class="breakdown-score" id="technical-score">0%</div>
+                                    <div class="breakdown-details" id="technical-details"></div>
+                                </div>
+                                <div class="breakdown-item">
+                                    <h5>Data & Information</h5>
+                                    <div class="breakdown-score" id="dataSystems-score">0%</div>
+                                    <div class="breakdown-details" id="dataSystems-details"></div>
+                                </div>
+                                <div class="breakdown-item">
+                                    <h5>Financial Resources</h5>
+                                    <div class="breakdown-score" id="financial-score">0%</div>
+                                    <div class="breakdown-details" id="financial-details"></div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="recommendations">
+                            <h4>📋 Recommended Actions</h4>
+                            <div id="recommendations-list"></div>
+                        </div>
+                        
+                        <div class="form-actions">
+                            <button type="button" class="btn-secondary" onclick="showAnalysisTab('financial')">← Previous</button>
+                            <button type="button" class="btn-primary" onclick="generateGapReport()">Generate Full Report</button>
+                            <button type="button" class="btn-secondary" onclick="exportGapAnalysis()">Export to Excel</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p>Ministry of Environment, Climate Change and Natural Resources (MECCNAR) - Climate Change Secretariat</p>
+            <p>ETF Gap Analysis Tool - BTR1/NC4 Implementation Project</p>
+        </div>
+    </footer>
+
+    <script src="scripts/gap-analysis.js"></script>
+</body>
+</html>

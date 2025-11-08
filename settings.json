@@ -1,0 +1,6 @@
+[file name]: settings.json
+[file content begin]
+{
+    "liveServer.settings.port": 5500
+}
+[file content end]

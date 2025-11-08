@@ -1,0 +1,115 @@
+{
+  "country": "The Gambia",
+  "reportingPeriod": "2024",
+  "btrSections": {
+    "nationalCircumstances": {
+      "name": "National Circumstances",
+      "description": "Country profile, institutional arrangements, and legal framework",
+      "required": true,
+      "progress": 70
+    },
+    "ghgInventory": {
+      "name": "GHG Inventory",
+      "description": "Greenhouse gas emissions by sector and source categories",
+      "required": true,
+      "progress": 60
+    },
+    "mitigationActions": {
+      "name": "Mitigation Actions",
+      "description": "Policies and measures to reduce emissions and their effects",
+      "required": true,
+      "progress": 45
+    },
+    "vulnerabilityAssessment": {
+      "name": "Vulnerability Assessment",
+      "description": "Climate change impacts, vulnerability and adaptation actions",
+      "required": true,
+      "progress": 30
+    },
+    "supportInformation": {
+      "name": "Support Needed/Received",
+      "description": "Financial, technical and capacity-building support",
+      "required": true,
+      "progress": 25
+    },
+    "otherInformation": {
+      "name": "Other Information",
+      "description": "Additional relevant information including SDG linkages",
+      "required": false,
+      "progress": 0
+    }
+  },
+  "ndc": {
+    "baseYear": 2020,
+    "baseEmissions": 3.542,
+    "targets": {
+      "2025": {
+        "reduction": 1.796,
+        "percentage": 50.7,
+        "currentProgress": 38
+      },
+      "2030": {
+        "reduction": 3.745,
+        "percentage": 105.7,
+        "currentProgress": 18
+      }
+    },
+    "sectorContributions": {
+      "afolu": 60,
+      "energy": 30,
+      "waste": 10
+    },
+    "netZeroTarget": 2050
+  },
+  "ghgInventory": {
+    "referenceYear": 2020,
+    "sectors": ["Energy", "AFOLU", "Waste", "IPPU"],
+    "methodology": "IPCC 2006 Guidelines",
+    "timeSeries": [1990, 2000, 2010, 2015, 2020]
+  },
+  "keySectors": [
+    {
+      "name": "AFOLU",
+      "code": "Agriculture, Forestry and Other Land Use",
+      "contribution": "Primary",
+      "emissionShare": 65
+    },
+    {
+      "name": "Energy",
+      "code": "Energy",
+      "contribution": "Significant",
+      "emissionShare": 25
+    },
+    {
+      "name": "Waste",
+      "code": "Waste",
+      "contribution": "Moderate",
+      "emissionShare": 8
+    },
+    {
+      "name": "IPPU",
+      "code": "Industrial Processes and Product Use",
+      "contribution": "Minor",
+      "emissionShare": 2
+    }
+  ],
+  "institutionalFramework": {
+    "leadAgency": "MECCNAR - Climate Change Secretariat",
+    "keyPartners": [
+      "Ministry of Agriculture",
+      "Ministry of Energy",
+      "Ministry of Finance",
+      "National Environment Agency",
+      "NAWEC",
+      "University of The Gambia"
+    ],
+    "coordinationMechanism": "Inter-ministerial Committee on Climate Change"
+  },
+  "projectDetails": {
+    "fundingAgency": "UNEP",
+    "projectCode": "BTR1/NC4",
+    "timeline": "12 months",
+    "technicalManager": "Technical Project Manager - BTR1/NC4 Implementation",
+    "phase": "Phase 1 - Critical BTR Content Alignment"
+  }
+}

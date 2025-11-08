@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Gambia BTR Platform</title>
+    <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <div class="logo-container">
+                <div class="logo-placeholder">GM</div>
+                <div class="logo-text">
+                    <h1>BTR/NC Platform</h1>
+                    <p>Ministry of Environment, Climate Change and Natural Resources</p>
+                </div>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#" class="nav-link active" data-section="dashboard">Dashboard</a></li>
+                    <li><a href="#" class="nav-link" data-section="btr-content">BTR Content</a></li>
+                    <li><a href="#" class="nav-link" data-section="ghg-inventory">GHG Inventory</a></li>
+                    <li><a href="#" class="nav-link" data-section="data-repository">Data Repository</a></li>
+                    <li><a href="#" class="nav-link" data-section="reports">Reports</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="dashboard" class="section active">
+            <div class="section-header">
+                <h2>BTR/NC Dashboard</h2>
+                <p>Welcome to The Gambia's Enhanced Transparency Framework Platform</p>
+            </div>
+            
+            <div class="dashboard-grid">
+                <div class="stat-cards">
+                    <div class="stat-card">
+                        <div class="stat-value" id="btr-content-progress">70%</div>
+                        <div class="stat-label">BTR Content Complete</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value" id="ghg-inventory-progress">60%</div>
+                        <div class="stat-label">GHG Inventory Progress</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value" id="ndc-2025-progress">38%</div>
+                        <div class="stat-label">NDC 2025 Target</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value" id="data-completeness">45%</div>
+                        <div class="stat-label">Data Completeness</div>
+                    </div>
+                </div>
+                
+                <div class="progress-summary">
+                    <h3>Overall BTR Progress</h3>
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="overall-progress" style="width: 60%"></div>
+                    </div>
+                    <span id="overall-progress-text">Overall Progress: 60%</span>
+                </div>
+                
+                <div class="quick-actions">
+                    <h3>Quick Actions</h3>
+                    <div class="action-buttons">
+                        <button class="quick-action-btn" data-action="btr-content">Continue BTR Content</button>
+                        <button class="quick-action-btn" data-action="ghg-inventory">Update GHG Inventory</button>
+                        <a href="gap-analysis.html" class="quick-action-btn" style="text-decoration: none; text-align: center;">ETF Gap Analysis</a>
+                        <button class="quick-action-btn" data-action="data-repository">Manage Data Repository</button>
+                    </div>
+                </div>
+                
+                <div class="recent-activities">
+                    <h3>Recent Activities</h3>
+                    <ul id="recent-activities">
+                        <li>Platform initialized</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="btr-content" class="section">
+            <div class="section-header">
+                <h2>BTR Content Framework</h2>
+                <p>Complete all mandatory BTR sections</p>
+            </div>
+            
+            <div class="content-navigation">
+                <p>Navigate through BTR sections:</p>
+                <div class="tab-nav content-tabs">
+                    <button class="tab-btn active" data-tab="national-circumstances">National Circumstances</button>
+                    <button class="tab-btn" data-tab="ghg-inventory-content">GHG Inventory</button>
+                    <button class="tab-btn" data-tab="mitigation-actions">Mitigation Actions</button>
+                    <button class="tab-btn" data-tab="vulnerability-assessment">Vulnerability Assessment</button>
+                    <button class="tab-btn" data-tab="support-information">Support Information</button>
+                    <button class="tab-btn" data-tab="other-information">Other Information</button>
+                </div>
+            </div>
+            
+            <div class="tab-content">
+                <div class="tab-pane active" id="national-circumstances-tab">
+                    <h3>National Circumstances</h3>
+                    <form data-section="nationalCircumstances">
+                        <div class="form-group">
+                            <label for="countryProfile" class="form-label">Country Profile Summary</label>
+                            <textarea id="countryProfile" class="form-control" rows="4" placeholder="Describe national circumstances, institutional arrangements, and legal framework..."></textarea>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="institutionalArrangements" class="form-label">Institutional Arrangements</label>
+                            <textarea id="institutionalArrangements" class="form-control" rows="4" placeholder="Describe institutional arrangements for climate change governance..."></textarea>
+                        </div>
+                        
+                        <div class="form-actions">
+                            <button type="button" class="btn-primary save-section-btn" data-section="nationalCircumstances">Save Section</button>
+                        </div>
+                    </form>
+                </div>
+                
+                <div class="tab-pane" id="ghg-inventory-content-tab">
+                    <h3>GHG Inventory Reporting</h3>
+                    <form data-section="ghgInventory">
+                        <div class="form-group">
+                            <label for="inventoryMethodology" class="form-label">Methodology Used</label>
+                            <select id="inventoryMethodology" class="form-control">
+                                <option value="">Select methodology</option>
+                                <option value="ipcc2006">IPCC 2006 Guidelines</option>
+                                <option value="ipcc2019">IPCC 2019 Refinement</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="inventoryYears" class="form-label">Inventory Years Covered</label>
+                            <input type="text" id="inventoryYears" class="form-control" placeholder="e.g., 2015-2020">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="keyCategories" class="form-label">Key Category Analysis</label>
+                            <textarea id="keyCategories" class="form-control" rows="4" placeholder="Describe key category analysis results..."></textarea>
+                        </div>
+                        
+                        <div class="form-actions">
+                            <button type="button" class="btn-primary save-section-btn" data-section="ghgInventory">Save Section</button>
+                        </div>
+                    </form>
+                </div>
+                
+                <div class="tab-pane" id="mitigation-actions-tab">
+                    <h3>Mitigation Actions and Effects</h3>
+                    <form data-section="mitigationActions">
+                        <div class="form-group">
+                            <label for="mitigationPolicies" class="form-label">Policies and Measures</label>
+                            <textarea id="mitigationPolicies" class="form-control" rows="4" placeholder="Describe mitigation policies and measures implemented..."></textarea>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="mitigationEffects" class="form-label">Effects of Mitigation Actions</label>
+                            <textarea id="mitigationEffects" class="form-control" rows="4" placeholder="Describe effects of mitigation actions on emissions..."></textarea>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="progressIndicators" class="form-label">Progress Indicators</label>
+                            <textarea id="progressIndicators" class="form-control" rows="4" placeholder="Describe indicators used to track progress..."></textarea>
+                        </div>
+                        
+                        <div class="form-actions">
+                            <button type="button" class="btn-primary save-section-btn" data-section="mitigationActions">Save Section</button>
+                        </div>
+                    </form>
+                </div>
+                
+                <div class="tab-pane" id="vulnerability-assessment-tab">
+                    <h3>Vulnerability Assessment and Adaptation</h3>
+                    <form data-section="vulnerabilityAssessment">
+                        <div class="form-group">
+                            <label for="climateImpacts" class="form-label">Climate Change Impacts</label>
+                            <textarea id="climateImpacts" class="form-control" rows="4" placeholder="Describe observed and projected climate change impacts..."></textarea>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="vulnerabilityAssessment" class="form-label">Vulnerability Assessment</label>
+                            <textarea id="vulnerabilityAssessment" class="form-control" rows="4" placeholder="Describe vulnerability assessment methods and results..."></textarea>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="adaptationActions" class="form-label">Adaptation Actions</label>
+                            <textarea id="adaptationActions" class="form-control" rows="4" placeholder="Describe adaptation actions and their implementation status..."></textarea>
+                        </div>
+                        
+                        <div class="form-actions">
+                            <button type="button" class="btn-primary save-section-btn" data-section="vulnerabilityAssessment">Save Section</button>
+                        </div>
+                    </form>
+                </div>
+                
+                <div class="tab-pane" id="support-information-tab">
+                    <h3>Support Needed and Received</h3>
+                    <form data-section="supportInformation">
+                        <div class="form-group">
+                            <label for="financialSupport" class="form-label">Financial Support</label>
+                            <textarea id="financialSupport" class="form-control" rows="4" placeholder="Describe financial support needed and received..."></textarea>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="technicalSupport" class="form-label">Technical Support</label>
+                            <textarea id="technicalSupport" class="form-control" rows="4" placeholder="Describe technical support needed and received..."></textarea>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="capacityBuilding" class="form-label">Capacity Building</label>
+                            <textarea id="capacityBuilding" class="form-control" rows="4" placeholder="Describe capacity building needs and activities..."></textarea>
+                        </div>
+                        
+                        <div class="form-actions">
+                            <button type="button" class="btn-primary save-section-btn" data-section="supportInformation">Save Section</button>
+                        </div>
+                    </form>
+                </div>
+                
+                <div class="tab-pane" id="other-information-tab">
+                    <h3>Other Information</h3>
+                    <form data-section="otherInformation">
+                        <div class="form-group">
+                            <label for="sdgLinkages" class="form-label">SDG Linkages</label>
+                            <textarea id="sdgLinkages" class="form-control" rows="4" placeholder="Describe linkages with Sustainable Development Goals..."></textarea>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="additionalInfo" class="form-label">Additional Information</label>
+                            <textarea id="additionalInfo" class="form-control" rows="4" placeholder="Any other relevant information..."></textarea>
+                        </div>
+                        
+                        <div class="form-actions">
+                            <button type="button" class="btn-primary save-section-btn" data-section="otherInformation">Save Section</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <section id="ghg-inventory" class="section">
+            <div class="section-header">
+                <h2>GHG Inventory Management</h2>
+                <p>Manage greenhouse gas emissions data by sector</p>
+            </div>
+            
+            <div class="content-navigation">
+                <p>Select sector to update emissions data:</p>
+                <div class="tab-nav content-tabs">
+                    <button class="tab-btn active" data-tab="energy-sector">Energy</button>
+                    <button class="tab-btn" data-tab="afolu-sector">AFOLU</button>
+                    <button class="tab-btn" data-tab="waste-sector">Waste</button>
+                    <button class="tab-btn" data-tab="ipuu-sector">IPPU</button>
+                    <button class="tab-btn" data-tab="inventory-summary">Inventory Summary</button>
+                </div>
+            </div>
+            
+            <div class="tab-content">
+                <div class="tab-pane active" id="energy-sector-tab">
+                    <h3>Energy Sector Emissions</h3>
+                    <form data-section="energySector">
+                        <div class="form-group">
+                            <label for="energyEmissions" class="form-label">Emissions (kt CO₂eq)</label>
+                            <input type="number" id="energyEmissions" class="form-control" step="0.01" min="0">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="energyActivityData" class="form-label">Activity Data Sources</label>
+                            <textarea id="energyActivityData" class="form-control" rows="3" placeholder="Describe activity data sources for energy sector..."></textarea>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="energyEmissionFactors" class="form-label">Emission Factors Used</label>
+                            <textarea id="energyEmissionFactors" class="form-control" rows="3" placeholder="Describe emission factors used for energy sector..."></textarea>
+                        </div>
+                        
+                        <div class="form-actions">
+                            <button type="button" class="btn-primary save-section-btn" data-section="energySector">Save Data</button>
+                        </div>
+                    </form>
+                </div>
+                
+                <div class="tab-pane" id="afolu-sector-tab">
+                    <h3>AFOLU Sector Emissions</h3>
+                    <form data-section="afoluSector">
+                        <div class="form-group">
+                            <label for="afoluEmissions" class="form-label">Emissions (kt CO₂eq)</label>
+                            <input type="number" id="afoluEmissions" class="form-control" step="0.01" min="0">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="afoluActivityData" class="form-label">Activity Data Sources</label>
+                            <textarea id="afoluActivityData" class="form-control" rows="3" placeholder="Describe activity data sources for AFOLU sector..."></textarea>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="afoluEmissionFactors" class="form-label">Emission Factors Used</label>
+                            <textarea id="afoluEmissionFactors" class="form-control" rows="3" placeholder="Describe emission factors used for AFOLU sector..."></textarea>
+                        </div>
+                        
+                        <div class="form-actions">
+                            <button type="button" class="btn-primary save-section-btn" data-section="afoluSector">Save Data</button>
+                        </div>
+                    </form>
+                </div>
+                
+                <div class="tab-pane" id="waste-sector-tab">
+                    <h3>Waste Sector Emissions</h3>
+                    <form data-section="wasteSector">
+                        <div class="form-group">
+                            <label for="wasteEmissions" class="form-label">Emissions (kt CO₂eq)</label>
+                            <input type="number" id="wasteEmissions" class="form-control" step="0.01" min="0">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="wasteActivityData" class="form-label">Activity Data Sources</label>
+                            <textarea id="wasteActivityData" class="form-control" rows="3" placeholder="Describe activity data sources for waste sector..."></textarea>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="wasteEmissionFactors" class="form-label">Emission Factors Used</label>
+                            <textarea id="wasteEmissionFactors" class="form-control" rows="3" placeholder="Describe emission factors used for waste sector..."></textarea>
+                        </div>
+                        
+                        <div class="form-actions">
+                            <button type="button" class="btn-primary save-section-btn" data-section="wasteSector">Save Data</button>
+                        </div>
+                    </form>
+                </div>
+                
+                <div class="tab-pane" id="ipuu-sector-tab">
+                    <h3>IPPU Sector Emissions</h3>
+                    <form data-section="ipuuSector">
+                        <div class="form-group">
+                            <label for="ipuuEmissions" class="form-label">Emissions (kt CO₂eq)</label>
+                            <input type="number" id="ipuuEmissions" class="form-control" step="0.01" min="0">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="ipuuActivityData" class="form-label">Activity Data Sources</label>
+                            <textarea id="ipuuActivityData" class="form-control" rows="3" placeholder="Describe activity data sources for IPPU sector..."></textarea>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="ipuuEmissionFactors" class="form-label">Emission Factors Used</label>
+                            <textarea id="ipuuEmissionFactors" class="form-control" rows="3" placeholder="Describe emission factors used for IPPU sector..."></textarea>
+                        </div>
+                        
+                        <div class="form-actions">
+                            <button type="button" class="btn-primary save-section-btn" data-section="ipuuSector">Save Data</button>
+                        </div>
+                    </form>
+                </div>
+                
+                <div class="tab-pane" id="inventory-summary-tab">
+                    <h3>GHG Inventory Summary</h3>
+                    <div class="summary-cards">
+                        <div class="stat-card">
+                            <div class="stat-value" id="total-emissions">3.54</div>
+                            <div class="stat-label">Total Emissions (Mt CO₂eq)</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-value" id="largest-sector">AFOLU</div>
+                            <div class="stat-label">Largest Contributing Sector</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-value" id="inventory-year">2020</div>
+                            <div class="stat-label">Reference Year</div>
+                        </div>
+                    </div>
+                    
+                    <div class="sector-breakdown">
+                        <h4>Sectoral Breakdown</h4>
+                        <div class="breakdown-chart">
+                            <div class="breakdown-item">
+                                <div class="sector-name">Energy</div>
+                                <div class="sector-bar-container">
+                                    <div class="sector-bar" data-sector="energy" style="width: 25%"></div>
+                                </div>
+                                <div class="sector-percentage">25%</div>
+                            </div>
+                            <div class="breakdown-item">
+                                <div class="sector-name">AFOLU</div>
+                                <div class="sector-bar-container">
+                                    <div class="sector-bar" data-sector="afolu" style="width: 65%"></div>
+                                </div>
+                                <div class="sector-percentage">65%</div>
+                            </div>
+                            <div class="breakdown-item">
+                                <div class="sector-name">Waste</div>
+                                <div class="sector-bar-container">
+                                    <div class="sector-bar" data-sector="waste" style="width: 8%"></div>
+                                </div>
+                                <div class="sector-percentage">8%</div>
+                            </div>
+                            <div class="breakdown-item">
+                                <div class="sector-name">IPPU</div>
+                                <div class="sector-bar-container">
+                                    <div class="sector-bar" data-sector="ipuu" style="width: 2%"></div>
+                                </div>
+                                <div class="sector-percentage">2%</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="data-repository" class="section">
+            <div class="section-header">
+                <h2>Data Repository</h2>
+                <p>Central repository for all BTR-related data</p>
+            </div>
+            
+            <div class="content-navigation">
+                <p>Manage different data categories:</p>
+                <div class="tab-nav content-tabs">
+                    <button class="tab-btn active" data-tab="activity-data">Activity Data</button>
+                    <button class="tab-btn" data-tab="emission-factors">Emission Factors</button>
+                    <button class="tab-btn" data-tab="methodological-parameters">Methodological Parameters</button>
+                    <button class="tab-btn" data-tab="support-data">Support Data</button>
+                </div>
+            </div>
+            
+            <div class="tab-content">
+                <div class="tab-pane active" id="activity-data-tab">
+                    <h3>Activity Data Management</h3>
+                    <div class="data-actions">
+                        <button class="btn-primary" id="add-activity-data">Add Activity Data</button>
+                        <button class="btn-secondary" id="import-activity-data">Import from Excel</button>
+                    </div>
+                    
+                    <div class="data-table-container">
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th>Sector</th>
+                                    <th>Category</th>
+                                    <th>Year</th>
+                                    <th>Value</th>
+                                    <th>Unit</th>
+                                    <th>Source</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody id="activity-data-body">
+                                <!-- Activity data will be populated here -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                
+                <div class="tab-pane" id="emission-factors-tab">
+                    <h3>Emission Factors Repository</h3>
+                    <div class="data-actions">
+                        <button class="btn-primary" id="add-emission-factor">Add Emission Factor</button>
+                    </div>
+                    
+                    <div class="data-table-container">
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th>Sector</th>
+                                    <th>Category</th>
+                                    <th>Emission Factor</th>
+                                    <th>Unit</th>
+                                    <th>Source</th>
+                                    <th>Tier</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody id="emission-factors-body">
+                                <!-- Emission factors will be populated here -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                
+                <div class="tab-pane" id="methodological-parameters-tab">
+                    <h3>Methodological Parameters</h3>
+                    <form data-section="methodologicalParameters">
+                        <div class="form-group">
+                            <label for="globalWarmingPotentials" class="form-label">Global Warming Potentials (GWP)</label>
+                            <textarea id="globalWarmingPotentials" class="form-control" rows="4" placeholder="Specify GWPs used (CO₂, CH₄, N₂O, etc.)..."></textarea>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="uncertaintyAssessment" class="form-label">Uncertainty Assessment Methods</label>
+                            <textarea id="uncertaintyAssessment" class="form-control" rows="4" placeholder="Describe uncertainty assessment methods..."></textarea>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="qaQcProcedures" class="form-label">QA/QC Procedures</label>
+                            <textarea id="qaQcProcedures" class="form-control" rows="4" placeholder="Describe quality assurance/quality control procedures..."></textarea>
+                        </div>
+                        
+                        <div class="form-actions">
+                            <button type="button" class="btn-primary save-section-btn" data-section="methodologicalParameters">Save Parameters</button>
+                        </div>
+                    </form>
+                </div>
+                
+                <div class="tab-pane" id="support-data-tab">
+                    <h3>Support Data and Documentation</h3>
+                    <div class="data-actions">
+                        <button class="btn-primary" id="add-support-data">Add Support Data</button>
+                    </div>
+                    
+                    <div class="support-data-grid">
+                        <div class="support-data-card">
+                            <h4>National Communications</h4>
+                            <p>Previous national communication documents</p>
+                            <button class="btn-secondary">Manage Documents</button>
+                        </div>
+                        
+                        <div class="support-data-card">
+                            <h4>NDC Documentation</h4>
+                            <p>Nationally Determined Contribution documents</p>
+                            <button class="btn-secondary">Manage Documents</button>
+                        </div>
+                        
+                        <div class="support-data-card">
+                            <h4>Methodology Reports</h4>
+                            <p>Technical methodology documentation</p>
+                            <button class="btn-secondary">Manage Documents</button>
+                        </div>
+                        
+                        <div class="support-data-card">
+                            <h4>Validation Reports</h4>
+                            <p>Third-party validation and review reports</p>
+                            <button class="btn-secondary">Manage Documents</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="reports" class="section">
+            <div class="section-header">
+                <h2>Report Generator</h2>
+                <p>Generate BTR reports and implementation roadmap</p>
+            </div>
+            
+            <div class="content-navigation">
+                <div class="report-actions">
+                    <button id="generate-btr-report" class="btn-primary">Generate BTR Report</button>
+                    <button id="generate-roadmap" class="btn-primary">Generate Implementation Roadmap</button>
+                    <button id="generate-gap-report" class="btn-secondary">Generate Gap Analysis Report</button>
+                </div>
+                
+                <div class="report-options">
+                    <div class="form-group">
+                        <label for="report-period" class="form-label">Reporting Period</label>
+                        <select id="report-period" class="form-control">
+                            <option value="2024">2024 BTR</option>
+                            <option value="2022-2024">2022-2024 Biennial Period</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="report-sections" class="form-label">Include Sections</label>
+                        <div class="checkbox-group">
+                            <label><input type="checkbox" name="report-sections" value="nationalCircumstances" checked> National Circumstances</label>
+                            <label><input type="checkbox" name="report-sections" value="ghgInventory" checked> GHG Inventory</label>
+                            <label><input type="checkbox" name="report-sections" value="mitigationActions" checked> Mitigation Actions</label>
+                            <label><input type="checkbox" name="report-sections" value="vulnerabilityAssessment" checked> Vulnerability Assessment</label>
+                            <label><input type="checkbox" name="report-sections" value="supportInformation" checked> Support Information</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div id="report-content" class="report-output"></div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p>Ministry of Environment, Climate Change and Natural Resources</p>
+            <p>BTR1/NC4 Implementation Project</p>
+        </div>
+    </footer>
+
+    <script src="scripts/app.js"></script>
+</body>
+</html>

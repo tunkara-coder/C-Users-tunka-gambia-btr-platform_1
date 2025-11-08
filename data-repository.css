@@ -1,0 +1,152 @@
+/* New file: styles/data-repository.css */
+.data-container {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    overflow: hidden;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.data-nav {
+    display: flex;
+    background: var(--secondary-color);
+    padding: 1rem;
+    border-bottom: 1px solid var(--border-color);
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.data-nav-btn {
+    background: white;
+    border: 1px solid var(--border-color);
+    padding: 0.75rem 1.5rem;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 500;
+}
+
+.data-nav-btn:hover {
+    background: var(--primary-light);
+    color: white;
+    border-color: var(--primary-light);
+}
+
+.data-nav-btn.active {
+    background: var(--primary-color);
+    color: white;
+    border-color: var(--primary-color);
+}
+
+.data-content {
+    padding: 2rem;
+    min-height: 600px;
+}
+
+.data-tab {
+    display: none;
+}
+
+.data-tab.active {
+    display: block;
+    animation: fadeIn 0.5s ease;
+}
+
+.data-actions {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.data-table-container {
+    overflow-x: auto;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+}
+
+.data-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.data-table th,
+.data-table td {
+    padding: 0.75rem;
+    text-align: left;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.data-table th {
+    background: var(--secondary-color);
+    font-weight: 600;
+    color: var(--text-dark);
+    position: sticky;
+    top: 0;
+}
+
+.data-table tr:hover {
+    background: var(--accent-light);
+}
+
+.data-quality-indicator {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    margin-right: 0.5rem;
+}
+
+.quality-high {
+    background: var(--success-color);
+}
+
+.quality-medium {
+    background: var(--warning-color);
+}
+
+.quality-low {
+    background: var(--danger-color);
+}
+
+.tier-badge {
+    display: inline-block;
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.tier-1 {
+    background: #e3f2fd;
+    color: #1976d2;
+}
+
+.tier-2 {
+    background: #e8f5e8;
+    color: #2e7d32;
+}
+
+.tier-3 {
+    background: #fff3e0;
+    color: #ef6c00;
+}
+
+@media (max-width: 768px) {
+    .data-nav {
+        flex-direction: column;
+    }
+    
+    .data-nav-btn {
+        text-align: center;
+    }
+    
+    .data-actions {
+        flex-direction: column;
+    }
+    
+    .data-table {
+        font-size: 0.9rem;
+    }
+}
